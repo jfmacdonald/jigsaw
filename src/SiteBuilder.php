@@ -22,9 +22,9 @@ class SiteBuilder
 
     public function build($source, $dest, $siteData)
     {
+        $this->cleanup();
         $this->prepareDirectories([$this->cachePath, $dest]);
         $outputFiles = $this->writeFiles($source, $dest, $siteData);
-        $this->cleanup();
 
         return $outputFiles;
     }
